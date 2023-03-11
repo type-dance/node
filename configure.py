@@ -1399,7 +1399,7 @@ def configure_node(o):
   if options.dest_os == 'android':
     shlib_suffix = 'so'
   elif sys.platform == 'darwin':
-    shlib_suffix = '%s.dylib'
+    shlib_suffix = 'dylib'
   elif sys.platform.startswith('aix'):
     shlib_suffix = '%s.a'
   elif sys.platform == 'os400':
@@ -1407,7 +1407,7 @@ def configure_node(o):
   elif sys.platform.startswith('zos'):
     shlib_suffix = '%s.x'
   else:
-    shlib_suffix = 'so.%s'
+    shlib_suffix = 'so'
   if '%s' in shlib_suffix:
     shlib_suffix %= node_module_version
 

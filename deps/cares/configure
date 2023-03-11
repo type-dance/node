@@ -18631,11 +18631,6 @@ _LT_EOF
 
 
 _lt_libdeps_save_CFLAGS=$CFLAGS
-case "$CC $CFLAGS " in #(
-*\ -flto*\ *) CFLAGS="$CFLAGS -fno-lto" ;;
-*\ -fwhopr*\ *) CFLAGS="$CFLAGS -fno-whopr" ;;
-*\ -fuse-linker-plugin*\ *) CFLAGS="$CFLAGS -fno-use-linker-plugin" ;;
-esac
 
 if { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$ac_compile\""; } >&5
   (eval $ac_compile) 2>&5
@@ -37150,6 +37145,3 @@ done
 ## -------------------------------- ##
 ##  End of distclean amending code  ##
 ## -------------------------------- ##
-
-
-

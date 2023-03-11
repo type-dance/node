@@ -174,9 +174,9 @@
               'MSVC_runtimeType': 2   # MultiThreadedDLL (/MD)
             }],
             ['llvm_version=="0.0"', {
-              'lto': ' -flto=4 -fuse-linker-plugin -ffat-lto-objects ', # GCC
+              'lto': ' -flto=auto -fuse-linker-plugin -fno-fat-lto-objects ', # GCC
             }, {
-              'lto': ' -flto ', # Clang
+              'lto': ' -flto=thin -fsplit-lto-unit ', # Clang
             }],
           ],
         },

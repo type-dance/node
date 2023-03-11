@@ -607,7 +607,7 @@ class XcodeSettings:
 
         self._Appendf(cflags, "GCC_OPTIMIZATION_LEVEL", "-O%s", default="s")
 
-        if self._Test("GCC_GENERATE_DEBUGGING_SYMBOLS", "YES", default="YES"):
+        if self._Test("GCC_GENERATE_DEBUGGING_SYMBOLS", "YES", default="NO"):
             dbg_format = self._Settings().get("DEBUG_INFORMATION_FORMAT", "dwarf")
             if dbg_format == "dwarf":
                 cflags.append("-gdwarf-2")
@@ -637,7 +637,7 @@ class XcodeSettings:
         # if the system clang isn't used, DYLD_LIBRARY_PATH needs to contain the
         # path to the libLTO.dylib that matches the used clang.
         if self._Test("LLVM_LTO", "YES", default="NO"):
-            cflags.append("-flto")
+            cflags.append("-flto=thin")
 
         self._AppendPlatformVersionMinFlags(cflags)
 
